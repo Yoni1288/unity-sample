@@ -1,0 +1,115 @@
+# =========================
+
+# Unity .gitignore
+
+# =========================
+
+# --- Unity generated folders ---
+
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/´
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+UserSettings/
+
+# --- MemoryCaptures (profiling) ---
+
+MemoryCaptures/
+
+# --- Asset import pipeline ---
+
+Assets/AssetStoreTools*
+
+# --- Visual Studio / Rider ---
+
+.vs/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# Rider
+
+.idea/
+
+# VS Code
+
+.vscode/
+
+# --- OS generated files ---
+
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# --- Unity meta handling (IMPORTANT) ---
+
+# Keep .meta files!
+
+# Do NOT ignore them
+
+# --- Builds ---
+
+*.apk
+*.aab
+*.unitypackage
+*.app
+*.exe
+
+# --- Crash reports ---
+
+sysinfo.txt
+
+# --- Addressables ---
+
+ServerData/
+
+# --- Large ML / AI models (optional) ---
+
+# Uncomment if you use Git LFS instead
+
+# *.onnx
+
+# *.tflite
+
+# --- Temporary files ---
+
+*.log
+*.bak
+*.tmp
+
+# --- JetBrains Rider plugin ---
+
+Assets/Plugins/Editor/JetBrains*
+
+# --- Unity cache server ---
+
+Cache/
+
+# --- Gradle (Android) ---
+
+.gradle/
+
+# --- IL2CPP ---
+
+il2cppOutput/
+
+# --- iOS ---
+
+DerivedData/
+
+# --- UWP ---
+
+AppPackages/
+
+# --- WebGL ---
+
+*.symbols.json

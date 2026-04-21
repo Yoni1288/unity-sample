@@ -1,0 +1,5 @@
+/Users/yoniivan/My Test project/.utmp/RelWithDebInfo/2r6p3k5f/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/yoniivan/My Test project/.utmp/RelWithDebInfo/2r6p3k5f/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/Users/yoniivan/My Test project/.utmp/RelWithDebInfo/2r6p3k5f/armeabi-v7a/GameActivity/CMakeFiles/game.dir
+/Users/yoniivan/My Test project/.utmp/RelWithDebInfo/2r6p3k5f/armeabi-v7a/GameActivity/CMakeFiles/edit_cache.dir
+/Users/yoniivan/My Test project/.utmp/RelWithDebInfo/2r6p3k5f/armeabi-v7a/GameActivity/CMakeFiles/rebuild_cache.dir

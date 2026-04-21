@@ -1,0 +1,1 @@
+/Users/yoniivan/My Test project/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/2r6p3k5f/obj/armeabi-v7a
