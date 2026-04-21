@@ -63,6 +63,7 @@ Desktop.ini
 *.unitypackage
 *.app
 *.exe
+*.onnx
 
 # --- Crash reports ---
 
