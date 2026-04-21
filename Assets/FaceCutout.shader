@@ -6,17 +6,18 @@ Shader "Custom/FaceCutout"
         _MaskTex ("Mask Texture", 2D) = "white" {}
         _InvertMask ("Invert Mask", Float) = 0
         _EdgeSmoothing ("Edge Smoothing (blur)", Range(0, 1)) = 0.5
-        _Threshold ("Threshold", Range(0, 1)) = 0.5
-        _Dilation ("Dilation (expand)", Range(0, 0.1)) = 0.02
+        _Threshold ("Threshold", Range(0, 1)) = 0.35
+        _Dilation ("Dilation (pixels)", Range(0, 8)) = 2
     }
     SubShader
     {
         Tags { "RenderType"="Transparent" "Queue"="Transparent" }
         LOD 100
 
-        // הגדרות שקיפות
+        // Transparent background, visible face region only.
         Blend SrcAlpha OneMinusSrcAlpha
         ZWrite Off
+        Cull Back
 
         Pass
         {
@@ -76,13 +77,15 @@ Shader "Custom/FaceCutout"
                 maskAlpha = max(maskAlpha, max(max(tex2D(_MaskTex, i.uv + float2(offset.x, offset.y)).r, tex2D(_MaskTex, i.uv + float2(-offset.x, -offset.y)).r),
                                                max(tex2D(_MaskTex, i.uv + float2(offset.x, -offset.y)).r, tex2D(_MaskTex, i.uv + float2(-offset.x, offset.y)).r)));
                 
-                // Smooth edges with threshold and apply more aggressive smoothing
-                maskAlpha = smoothstep(_Threshold - _EdgeSmoothing * 2.0, _Threshold + _EdgeSmoothing, maskAlpha);
+                // Keep source pixel if model mask is visible even a little.
+                // Binary alpha with tiny epsilon avoids accidental half transparency.
+                maskAlpha = step(0.0001, maskAlpha);
                 
                 // Invert if needed
                 if (_InvertMask > 0.5)
                     maskAlpha = 1.0 - maskAlpha;
-                
+
+                // Copy source face pixels as-is, fully opaque on face region only.
                 col.a = maskAlpha;
 
                 return col;
